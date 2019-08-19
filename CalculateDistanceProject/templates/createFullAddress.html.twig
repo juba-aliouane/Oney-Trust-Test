@@ -1,0 +1,9 @@
+{% extends  'base.html.twig' %}
+{% form_theme formAddress 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+<h1> Calculate a new distance !</h1>
+{{form_start (formAddress )}}
+{{form_row(formAddress.addressValue,{'attr':{'placeholder':"ex : 12 Rue Cortot, 75018 Paris France"}})}}
+<button type="submit" class="btn btn-success"> calculate the distance </button>
+{{form_end (formAddress)}}
+{% endblock %}

@@ -1,0 +1,13 @@
+version: '3'
+services:
+    php:
+        build: ./php-docker
+        command: php bin/console server:run 0.0.0.0:8000
+        ports:
+            - "8888:8000"
+        volumes:
+            - ./CalculateDistanceProject:/var/www/CalculateDistanceProject
+            - ./php-docker/php.ini:/usr/local/etc/php/php.ini
+            - ./assets/vocabulary-gc-project.json:/var/www/CalculateDistanceProject-gc-project.json
+        environment:
+            GOOGLE_APPLICATION_CREDENTIALS: /var/www/CalculateDistanceProject-gc-project.json
